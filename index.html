@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" media="screen and (max-width: 500px)" href="style.css">
+    <link rel="icon" type="image/png" sizes="40x40" href="">
+    <title>Task-Management-app</title>
+</head>
+<body>
+<div id="container">
+    <section>
+    <div class="box"></div>
+    <div class="container-1">   
+        <div id="head">
+            <h1>Tasks</h1>
+        </div>
+        <div>
+           <!-- <i class="fa fa-plus" aria-hidden="true"></i> -->
+            <img src="images/settings.png" alt="task">
+            <a href="./addtask.html"><img onclick="show()" src="images/plus.png" alt="plus-sign"></a>
+        </div>
+    </div>
+        <div class="task1">
+        <div class="box1">
+            <!-- <input type="checkbox" name="me"> -->
+            <img id="increment-btn" onclick="increment()" src="images/verified.png" alt="check-box">
+            <h2 id="result-el"></h2>
+            <p id="result1" class="task-text"></p>
+                </div>
+            <div>
+        <p id="timestamp"></p>
+        </div>
+    </div>
+
+   
+        <div class="stats">
+            <H2>Stats</H2>
+            <div class="numbers">
+                <div class="number1">
+                <span id="count-el">0</span><p class="num-text">Total Tasks Closed</p>
+            </div>
+            <div class="number2">
+                <span id="totalTask">0</span><p class="num-text">Total Tasks Open</p>
+            </div>
+                <div class="number3">
+                <span id="completionPercent">0%</span><p class="num-text">Completion Rate</p>
+            </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+<script src="main.js"></script>
+</body>
+</html>
