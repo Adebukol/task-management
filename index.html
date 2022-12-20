@@ -10,8 +10,8 @@
     <title>Task-Management-app</title>
 </head>
 <body>
-<div id="container">
-    <section>
+<div class="container1">
+    <section id="taskList" class="task-m">
     <div class="box"></div>
     <div class="container-1">   
         <div id="head">
@@ -20,7 +20,7 @@
         <div>
            <!-- <i class="fa fa-plus" aria-hidden="true"></i> -->
             <img src="images/settings.png" alt="task">
-            <a href="./addtask.html"><img onclick="show()" src="images/plus.png" alt="plus-sign"></a>
+            <img id="showEl" onclick="show()" src="images/plus.png" alt="plus-sign">
         </div>
     </div>
         <div class="task1">
@@ -34,8 +34,6 @@
         <p id="timestamp"></p>
         </div>
     </div>
-
-   
         <div class="stats">
             <H2>Stats</H2>
             <div class="numbers">
@@ -50,9 +48,37 @@
             </div>
             </div>
         </div>
-        
+    </section>
     </div>
-</section>
+
+
+<div  class="container1 show">
+    <section id="taskAdd" class="Add-task" >
+      <div class="box"></div>
+      <div class="container-2">
+          <h1>Add Task</h1>
+          <div class="second">
+            
+              <form class="task-form" action="./index.html" method="GET">
+                <input type="text" name="task1" id="task-name" placeholder="TaskName" required>
+                <input type="text" name="task2" id="task-description" placeholder="TaskDescription" required>
+                <input type="submit" onclick="save()" id="my-button" value="ADD">
+                </form>
+                  <!-- <label for="task1">
+                  <input type="text" name="task1" id="task-name" placeholder="TaskName" required>
+              </label>
+              </div>
+              <div class="second">
+                  <label for="task2">
+                  <input type="text" name="task2" id="task-description" placeholder="TaskDescription" required>
+              </label>
+              </div>
+              <div> -->
+              <!-- <button id="my-button" onclick="save()" class="btn" type="submit">ADD</button> -->
+          </div>
+      </div>
+  </section>
+  </div>
 <script src="main.js"></script>
 </body>
 </html>

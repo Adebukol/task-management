@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="html" href="./index.html">
+    <link rel="stylesheet" media="screen and (max-width: 500px)" href="style.css">
+    <link rel="icon" type="image/png" sizes="40x40" href="">
+    <title>Task-Management-app</title>
+</head>
+<body>
+<div id="container1">
+  <section class="Add-task" >
+    <div class="box"></div>
+    <div class="container-2">
+        <h1>Add Task</h1>
+        <div class="second">
+          
+            <form class="task-form" action="./index.html" method="GET">
+              <fieldset>
+              <table>
+                <tr><td><input type="text" name="task1" id="task-name" placeholder="TaskName" required onblur="getVal()"></td></tr>
+                <tr><td><input type="text" name="task2" id="task-description" onblur="getVal()" placeholder="TaskDescription" required></td></tr>
+                <tr><td><input type="submit" onclick="save()" id="my-button" value="ADD"></td></tr>
+              </table>
+              </fieldset>
+              </form>
+                <label for="task1">
+                <input type="text" name="task1" id="task-name" placeholder="TaskName" required>
+            </label>
+            </div>
+            <div class="second">
+                <label for="task2">
+                <input type="text" name="task2" id="task-description" placeholder="TaskDescription" required>
+            </label>
+            </div>
+            <div>
+            <button id="my-button" onclick="save()" class="btn" type="submit">ADD</button>
+        </div>
+      </form>
+    </div>
+</section>
+</div>
+
+<script src="main.js" type="text/javascript">
+    
+</script>
+          <!-- <script ></script> -->
+  </body>
+</html>
