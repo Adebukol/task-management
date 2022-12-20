@@ -75,13 +75,32 @@ resultOne.textContent = descriptionInput.value;
  var outputEl = document.getElementById("result-el");
  outputEl.textContent = deGen;
  var saveEl = document.getElementById('my-button');
- function save(){
+
+ 
+ function getName() {
+  return localStorage.getItem("taskName");
+}
+
+/*function updateHTML() {
+  var name = getName();
+  document.getElementById("result-el").innerHTML = "Hello, " + name + "! Welcome!";
+  document.getElementById("task-description").innerHTML = name;
+}*/
+
+function save() {
   document.getElementById("taskList").style.display = "block";
   document.getElementById("taskAdd").style.display = "none";
-   saveEl
-  console.log(outputEl);
- }
+  // Gets input value
+  var name = document.getElementById("task-name").value;
+  var desT = document.getElementById("task-description").value;
 
+  // Saves data to retrieve later
+  localStorage.setItem("taskName", name);
+  localStorage.setItem("taskDescription", desT);
+  
+  // Updates HTML
+  updateHTML();
+}
 
 /*// let inputEl = document.getElementsByClassName("task-form");
 // function save(){
@@ -116,11 +135,11 @@ let count = 0;
     countEl.textContent = count
     // // console.log(count);
 }
-increment()
+
 //Timestamp
 let d = new Date();
 let text = d.toLocaleTimeString();
-document.getElementById("timestamp").innerHTML = text;
+document.getElementById("timestamp").textContent = text;
 
 //
 
