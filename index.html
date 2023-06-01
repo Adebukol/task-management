@@ -10,12 +10,15 @@
     <title>Task-Management-app</title>
 </head>
 <body>
-<div class="container1">
+<!-- <div class="container1">
     <section id="taskList" class="task-m">
     <div class="box"></div>
     <div class="container-1">   
         <div id="head">
-            <h1>Tasks</h1>
+            <h1>Tasks
+                <img src="images/settings.png" alt="task">
+            <img id="showEl" onclick="show()" src="images/plus.png" alt="plus-sign">
+            </h1>
         </div>
         <div>
             <img src="images/settings.png" alt="task">
@@ -24,7 +27,7 @@
     </div>
         <div class="task1">
             <div class="box1">
-                <img id="increment-btn" onclick="increment()" src="images/verified.png" alt="check-box">
+                <img id="increment-btn" class="inc-btn" onclick="increment()" src="images/verified.png" alt="check-box">
             </div>
             <div class="display">
                 <h2 id="result-el"></h2>
@@ -49,8 +52,27 @@
             </div>
         </div>
     </section>
-    </div>
+    </div> -->
 
+    <div class="container">
+       <div class="todoapp">
+        <h2>To-Do list
+            <img class="app-ctr" src="images/settings.png" alt="task">
+            <img class="app-ctr" id="showEl" onclick="show()" src="images/plus.png" alt="plus-sign">
+        </h2>
+        <div class="row">
+            <input type="text" name="task1" id="task-name" placeholder="TaskName">
+            <br>    
+            <input type="text" name="task2" id="task-description" placeholder="TaskDescription">
+                <button type="submit" onclick="save()" id="my-button">ADD</button>
+        </div>
+        <ul id="task-list">
+            <!-- <li class="checked">task 1</li>
+            <li>task 2</li>
+            <li>task 3</li> -->
+        </ul>
+       </div> 
+    </div>
 
 <div  class="container1 show">
     <section id="taskAdd" class="Add-task" >
