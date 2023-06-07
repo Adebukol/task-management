@@ -33,17 +33,24 @@ button{
 .todoapp{
   width: 100%;
   max-width: 540px;
-  margin: 100px auto 20px;
-  padding: 40px 30px 70px;
+  margin: 10px auto 20px;
+  padding-bottom: 70px;
   border-radius: 10px;
   background: #fff;
 }
-.todoapp h2{
-  color: #002765;
+#head{
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+.todoapp h1{
+  color: #002765;
+ 
   margin-bottom: 20px;
   justify-content: space-between;
+  margin-top: 10px;
+  
 }
 .app-ctr{
   height: 20px;
@@ -51,7 +58,15 @@ button{
   margin: 15px;
   color: black;
 }
-
+input{
+  outline: none;
+  background: transparent;
+  padding: 10px;
+  font-weight: 14px;
+  width: 80%;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
 ul li{
   list-style: none;
   font-size:  17px;
@@ -81,13 +96,28 @@ ul li.checked::before{
   background-position: center;
   background-size: cover;
 }
+
+ul li span{
+  position: absolute;
+  right: 0;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  color: #555;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+}
+ul li span:hover{
+  background: #edeef0 ;
+}
 .box{
   background-color: orangered;
   opacity: 80%;
   height: 50px;
   /*top-right top-left bottom-right bottom-left */
   border-radius: 10px 10px 0px 0px;
-  width: 100%;
 }
 
 /* .task-m{
@@ -166,7 +196,7 @@ p{
 }
 
 /*-----------------------------------------------Task Add-----------------------------------------------------------*/
-.Add-task{
+#add-task{
   display: none;
 }
 .container-2{
