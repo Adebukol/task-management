@@ -10,7 +10,13 @@
   background: linear-gradient(135deg, #153677, #4e085f );
   padding: 10px;
 }
-
+.box{
+  background-color: orangered;
+  opacity: 80%;
+  height: 50px;
+  /*top-right top-left bottom-right bottom-left */
+  border-radius: 10px 10px 0px 0px;
+}
 /* input{
   flex:1;
   border: none;
@@ -50,11 +56,17 @@ button{
 }
 .todoapp h1{
   color: #002765;
- 
+  font-size: 25px;
   margin-bottom: 20px;
   justify-content: space-between;
-  margin-top: 10px;
-  
+  margin-top: 10px; 
+}
+.heading{
+  display: flex;
+  padding-left: 70px;
+}
+.heading p{
+  font-size: 15px;
 }
 .app-ctr{
   height: 20px;
@@ -116,12 +128,9 @@ ul li span{
 ul li span:hover{
   background: #edeef0 ;
 }
-.box{
-  background-color: orangered;
-  opacity: 80%;
-  height: 50px;
-  /*top-right top-left bottom-right bottom-left */
-  border-radius: 10px 10px 0px 0px;
+
+.numbers span, p{
+  font-size: 16px;
 }
 
 /* .task-m{

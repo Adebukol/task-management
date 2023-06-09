@@ -2,7 +2,13 @@ const inputBox= document.getElementById('task-name');
 const descriptionBox = document.getElementById('task-description')
 const listContainer= document.getElementById('task-list');
 const dData = document.getElementById('des');
-const timeCount = new Date().getTime();
+const firstCount = document.getElementById('count-el');
+const secondCount = document.getElementById('totalTask');
+const timeCount = new Date()
+const hours =timeCount.getHours();
+const minute =timeCount.getMinutes();
+const seconds =timeCount.getSeconds();
+const timeNow = `${hours}:${minute}: ${seconds}`;
 
 // function save(){
 //   if(inputBox.value === ''){
@@ -29,7 +35,7 @@ function save(){
    }
    else{
     let li = document.createElement("li");
-    li.innerHTML = inputBox.value + " " + descriptionBox.value + " " + timeCount;
+    li.innerHTML = inputBox.value + "  " + " - " + descriptionBox.value + " " + " " + " " + " - " + timeNow;
     listContainer.appendChild(li);
     let span = document.createElement("span");
     span.innerHTML = "\u00d7";
@@ -37,6 +43,7 @@ function save(){
 }
   saveData()
   inputBox.value = "";
+  descriptionBox.value = "";
 
 }
 
@@ -70,6 +77,12 @@ function show(){
   document.getElementById("add-task").style.display = "block"
   document.getElementById("task-display").style.display = "none"
   }
+
+  firstCount.addEventListener("click", function(e){
+    if(e.target.classList.toggle("checked")){
+      e++
+    }
+  })
 
 
 //   document.getElementById('taskAdd').style.display = "block";
