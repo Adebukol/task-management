@@ -27,12 +27,16 @@ const timeNow = `${hours}:${minute}: ${seconds}`;
 //   inputBox.value = "";
 
 // }
+// const dontGo = document.getElementById("add-task").style.display = "block";
 function save(){
    document.getElementById("task-display").style.display = "block";
    document.getElementById("add-task").style.display = "none";
    if(inputBox.value === '' || descriptionBox.value === ''){
     alert("The field is required")
    }
+  //  else if(inputBox.value === '' || descriptionBox.value === ''){
+  //   return dontGo;
+  //  }
    else{
     let li = document.createElement("li");
     li.innerHTML = inputBox.value + "  " + " - " + descriptionBox.value + " " + " " + " " + " - " + timeNow;
