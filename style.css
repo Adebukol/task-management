@@ -30,6 +30,10 @@ button{
   outline: none;
 
 }*/
+
+#task-display{
+  display: block;
+}
 .todoapp{
   width: 100%;
   max-width: 540px;
@@ -81,7 +85,7 @@ ul li::before{
   height: 28px;
   width: 28px;
   border-radius: 50%;
-  background-image: url(images/verified.png);
+  background-image: url(images/unchecked.png);
   background-position: center;
   background-size: cover;
   top: 12px;
@@ -92,7 +96,7 @@ ul li.checked{
   text-decoration: line-through;
 }
 ul li.checked::before{
-  background-image: url(images/icon-close.svg);
+  background-image: url(images/check2.jpg);
   background-position: center;
   background-size: cover;
 }

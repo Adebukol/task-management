@@ -2,6 +2,8 @@ const inputBox= document.getElementById('task-name');
 const descriptionBox = document.getElementById('task-description')
 const listContainer= document.getElementById('task-list');
 const dData = document.getElementById('des');
+const timeCount = new Date().getTime();
+
 // function save(){
 //   if(inputBox.value === ''){
 //     alert("you cant leave blank!");
@@ -20,14 +22,19 @@ const dData = document.getElementById('des');
 
 // }
 function save(){
+   document.getElementById("task-display").style.display = "block";
+   document.getElementById("add-task").style.display = "none";
+   if(inputBox.value === '' || descriptionBox.value === ''){
+    alert("The field is required")
+   }
+   else{
     let li = document.createElement("li");
-    li.innerHTML = inputBox.value + " " + descriptionBox.value + " " + d;
-    // li.innerHTML = descriptionBox.value;
+    li.innerHTML = inputBox.value + " " + descriptionBox.value + " " + timeCount;
     listContainer.appendChild(li);
     let span = document.createElement("span");
     span.innerHTML = "\u00d7";
     li.appendChild(span);
-  
+}
   saveData()
   inputBox.value = "";
 
@@ -54,20 +61,16 @@ function showTask(){
 }
 showTask();
 
-const d = new Date();
-document.getElementById("timestamp").innerHTML = d;
+
 
 
 // let displayAdd = document.getElementById('showEl');
 
 function show(){
-  if(document.getElementById('add-task').style.display= "none"){
-    return document.getElementById("add-task").style.display = "block"
+  document.getElementById("add-task").style.display = "block"
+  document.getElementById("task-display").style.display = "none"
   }
-  if(document.getElementById('task-display').style.display= "block"){
-    return document.getElementById("task-dis").style.display = "none"
-  }
-}
+
 
 //   document.getElementById('taskAdd').style.display = "block";
 //   document.getElementById('increment-btn').style.display = "block";
