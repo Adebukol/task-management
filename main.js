@@ -50,25 +50,29 @@ function save(){
   descriptionBox.value = "";
 
 }
-
-
+let countTask =     document.getElementById("count-el")
+let taskClosed = document.getElementById("totalTask")
 listContainer.addEventListener("click", function(e){
   if(e.target.tagName === "LI"){
     e.target.classList.toggle("checked");
+    countTask.innerHTML ++
     saveData()
   }
   else if(e.target.tagName === "SPAN"){
     e.target.parentElement.remove();
+    taskClosed.innerHTML ++
     saveData()
   }
 }, false);
 
 function saveData(){
   localStorage.setItem("data", listContainer.innerHTML);
+  //localStorage.setItem("data",countTask.innerHTML);
 }
 
 function showTask(){
   listContainer.innerHTML = localStorage.getItem("data")
+  //countTask.innerHTML = localStorage.getItem("data")
 }
 showTask();
 
