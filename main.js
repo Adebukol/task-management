@@ -66,13 +66,13 @@ listContainer.addEventListener("click", function(e){
 }, false);
 
 function saveData(){
-  localStorage.setItem("data", listContainer.innerHTML);
-  //localStorage.setItem("data",countTask.innerHTML);
+  localStorage.setItem("input", listContainer.innerHTML);
+  //localStorage.setItem("input",countTask.innerHTML);
 }
 
 function showTask(){
-  listContainer.innerHTML = localStorage.getItem("data")
-  //countTask.innerHTML = localStorage.getItem("data")
+  listContainer.innerHTML = localStorage.getItem("input")
+  //countTask.innerHTML = localStorage.getItem("input")
 }
 showTask();
 
