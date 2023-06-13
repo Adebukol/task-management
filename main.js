@@ -1,8 +1,8 @@
 const inputBox= document.getElementById('task-name');
 const descriptionBox = document.getElementById('task-description')
-const listContainer= document.getElementById('task-page');
+const taskContainer= document.getElementById('task-page');
 const dData = document.getElementById('des');
-const firstCount = document.getElementById('count-el');
+const firstCount = document.getElementById('countEl');
 const secondCount = document.getElementById('totalTask');
 const timeCount = new Date()
 const hours =timeCount.getHours();
@@ -18,7 +18,7 @@ const timeNow = `${hours}:${minute}: ${seconds}`;
 //     let li = document.createElement("li");
 //     li.innerHTML = inputBox.value;
 //     // li.innerHTML = descriptionBox.value;
-//     listContainer.appendChild(li);
+//     taskContainer.appendChild(li);
 //     let span = document.createElement("span");
 //     span.innerHTML = "\u00d7";
 //     li.appendChild(span);
@@ -33,6 +33,9 @@ function save(){
    document.getElementById("add-task").style.display = "none";
    if(inputBox.value === '' || descriptionBox.value === ''){
     alert("The field is required")
+    document.getElementById("task-display").style.display = "none";
+    document.getElementById("add-task").style.display = "block";
+    
    }
   //  else if(inputBox.value === '' || descriptionBox.value === ''){
   //   return dontGo;
@@ -40,7 +43,7 @@ function save(){
    else{
     let li = document.createElement("li");
     li.innerHTML = inputBox.value + "  " + " - " + descriptionBox.value + " " + " " + " " + " - " + timeNow;
-    listContainer.appendChild(li);
+    taskContainer.appendChild(li);
     let span = document.createElement("span");
     span.innerHTML = "\u00d7";
     li.appendChild(span);
@@ -50,31 +53,57 @@ function save(){
   descriptionBox.value = "";
 
 }
-let countTask =     document.getElementById("count-el")
+
+let x = 5
+let b = 2
+let z = x/b * 100
+console.log(z)
+let countTask =     document.getElementById("countEl")
 let taskClosed = document.getElementById("totalTask")
-listContainer.addEventListener("click", function(e){
+let completionRate = document.getElementById("completionPercent")
+
+taskContainer.addEventListener("click", function(e){
   if(e.target.tagName === "LI"){
     e.target.classList.toggle("checked");
     countTask.innerHTML ++
     saveData()
+    saveCount()
+  }else if(e.target.tagName === "LI"){
+    e.target.classList.toggle("");
+    countTask.innerHTML --
   }
   else if(e.target.tagName === "SPAN"){
     e.target.parentElement.remove();
     taskClosed.innerHTML ++
     saveData()
+    saveCount()
   }
 }, false);
 
+let percent = countTask.innerHTML/taskClosed.innerHTML * 100
+completionRate.innerHTML
+
 function saveData(){
-  localStorage.setItem("input", listContainer.innerHTML);
+  localStorage.setItem("input", taskContainer.innerHTML);
   //localStorage.setItem("input",countTask.innerHTML);
 }
 
 function showTask(){
-  listContainer.innerHTML = localStorage.getItem("input")
+  taskContainer.innerHTML = localStorage.getItem("input")
   //countTask.innerHTML = localStorage.getItem("input")
 }
 showTask();
+
+function saveCount(){
+  localStorage.setItem("display", countEl.innerHTML);
+  localStorage.setItem("display", totalTask.innerHTML);
+}
+
+function showCount(){
+  countEl.innerHTML = localStorage.getItem("display")
+  totalTask.innerHTML = localStorage.getItem("display")
+}
+showCount();
 
 
 

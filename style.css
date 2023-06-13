@@ -33,7 +33,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
+  padding: 15px;
 }
 .task-input h1{
   color: #002765;
@@ -44,6 +44,8 @@
 }
 .heading{
   display: flex;
+  justify-content: flex-start;
+  align-items: center;
   padding-left: 70px;
 }
 .heading p{
@@ -54,8 +56,12 @@
   width: 20px;
   margin: 15px;
   color: black;
+  cursor: pointer;
 }
-
+#task-page{
+  margin-left: 20px;
+  margin-right: 20px;
+}
 ul li{
   list-style: none;
   font-size:  17px;
@@ -108,7 +114,7 @@ ul li span:hover{
 }
 
 p{
-  padding-right: 40px;
+  padding-right: 50px;
 }
 #result-el{
   margin-top: 0px;
