@@ -61,7 +61,7 @@ ul li{
   font-size:  17px;
   user-select: none;
   cursor: pointer;
-  padding: 12px 8px 12px 50px;
+  padding: 15px 8px 0px 50px;
   position: relative;
 }
 ul li::before{
