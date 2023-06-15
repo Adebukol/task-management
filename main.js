@@ -31,11 +31,11 @@ const timeNow = `${hours}:${minute}: ${seconds}`;
 function save(){
    document.getElementById("task-display").style.display = "block";
    document.getElementById("add-task").style.display = "none";
-   if(inputBox.value === '' || descriptionBox.value === ''){
+   if(inputBox.value.trim() === "" || descriptionBox.value.trim() === ""){
     alert("The field is required")
     document.getElementById("task-display").style.display = "none";
     document.getElementById("add-task").style.display = "block";
-    
+    return false;
    }
   //  else if(inputBox.value === '' || descriptionBox.value === ''){
   //   return dontGo;
