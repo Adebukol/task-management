@@ -1,203 +1,217 @@
-*{
-  margin: 0;
-  padding: 0;
+* {
+  margin: 0; 
+  padding: 0; 
   box-sizing: border-box;
 }
 
-.container{
-  width: 100%;
+ body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f4f6; /* Equivalent to bg-gray-100 */
+}
+.form-checkbox {
+    /* Tailwind's rounded-full applies border-radius, accent-color handles fill */
+    /* Default styles from Tailwind for checkboxes */
+    appearance: none; /* Hide default checkbox */
+    display: inline-block;
+    vertical-align: middle;
+    height: 1.25rem; /* h-5 */
+    width: 1.25rem;  /* w-5 */
+    border-width: 1px;
+    border-color: #d1d5db; /* gray-300 */
+    border-radius: 9999px; /* rounded-full */
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+.form-checkbox:checked {
+    background-color: #FF4500; /* orangered fill */
+    border-color: #FF4500; /* orangered border */
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Responsive adjustments for overall layout */
+@media (max-width: 640px) {
+    .max-w-md {
+        max-width: 100%;
+        margin: 0;
+        border-radius: 0; /* Remove border-radius on small screens if desired */
+    }
+    .rounded-xl {
+        border-radius: 0;
+    }
+    .rounded-t-xl {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+    .min-h-screen {
+        min-height: 100vh;
+    }
+}
+/* body {
+  background: linear-gradient(135deg, #153677, #4e085f);
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 30px 10px;
   min-height: 100vh;
-  background: linear-gradient(135deg, #153677, #4e085f );
-  padding: 10px;
+  color: #333;
 }
-.box{
-  background-color: orangered;
-  opacity: 80%;
+.container {
+  width: 100%;
+  max-width: 540px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.top-bar {
   height: 50px;
-  /*top-right top-left bottom-right bottom-left */
-  border-radius: 10px 10px 0px 0px;
-}
-
-#task-display{
-  display: block;
-}
-.task-input{
-  width: 100%;
-  max-width: 540px;
-  margin: 10px auto 20px;
-  padding-bottom: 70px;
-  border-radius: 10px;
-  background: #fff;
-}
-#head{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px;
-}
-.task-input h1{
-  color: #002765;
-  font-size: 25px;
-  margin-bottom: 20px;
-  justify-content: space-between;
-  margin-top: 10px; 
-}
-.heading{
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding-left: 70px;
-}
-.heading p{
-  font-size: 15px;
-}
-.app-ctr{
-  height: 20px;
-  width: 20px;
-  margin: 15px;
-  color: black;
-  cursor: pointer;
-}
-#task-page{
-  margin-left: 20px;
-  margin-right: 20px;
-}
-ul li{
-  list-style: none;
-  font-size:  17px;
-  user-select: none;
-  cursor: pointer;
-  padding: 15px 8px 0px 50px;
-  position: relative;
-}
-ul li::before{
-  content:'';
-  position: absolute;
-  height: 28px;
-  width: 28px;
-  border-radius: 50%;
-  background-image: url(images/unchecked.png);
-  background-position: center;
-  background-size: cover;
-  top: 12px;
-  left: 8px;
-}
-ul li.checked{
-  color: #555;
-  text-decoration: line-through;
-}
-ul li.checked::before{
-  background-image: url(images/check2.jpg);
-  background-position: center;
-  background-size: cover;
-}
-
-ul li span{
-  position: absolute;
-  right: 0;
-  top: 5px;
-  width: 40px;
-  height: 40px;
-  font-size: 22px;
-  color: #555;
-  line-height: 40px;
-  text-align: center;
-  border-radius: 50%;
-}
-ul li span:hover{
-  background: #edeef0 ;
-}
-
-.numbers span, p{
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
-p{
-  padding-right: 50px;
-}
-#result-el{
-  margin-top: 0px;
-}
-
-
-
-.stats{
-  margin: 20px;
-}
-.stats h2{
-  margin-bottom: 10px;
-}
-/* .numbers{
-  display: flex;
-  flex-direction: column;
-  
-} */
-.number1, .number2, .number3{
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  justify-content: space-between;
- }
-.container-1{
-  margin: 15px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  
-}
-/* .num-text{
-  margin-left: 30px;
-} */
-
-/*-----------------------------------------------Task Add-----------------------------------------------------------*/
-#add-task{
-  display: none;
-}
-
-.task-input h1{
-  padding-left:20px ;
-}
-
-.row{
-  margin: 20px;
-}
-input{
-  outline: none;
-  background: transparent;
-  padding: 10px;
-  font-weight: 14px;
-  min-width: 100%;
-  margin-bottom: 20px;
-  border-radius: 10px;
-}
-.task-page{
-  width: 100%;
-  max-width: 540px;
-  margin: 10px auto 20px;
-  padding-bottom: 70px;
-  border-radius: 10px;
-  background: #fff;
-}
-
-#add-btn{
-  display: block;
-  margin:0 auto;
-  text-align: center;
-  font-weight: 700;
-  font-size: 12px;
-  padding: 10px 15px;
-  color: #fff;
   background-color: orangered;
-  opacity: 80%;
+  width: 100%;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  border-bottom: 2px solid #eee;
+}
+
+.header-row h2 {
+  color: #002765;
+  font-weight: 700;
+  font-size: 26px;
+}
+
+.icons img {
+  height: 26px;
+  width: 26px;
+  cursor: pointer;
+  margin-left: 16px;
+  filter: invert(19%) sepia(82%) saturate(5669%) hue-rotate(4deg) brightness(95%) contrast(90%);
+  transition: transform 0.2s ease;
+}
+.icons img:hover {
+  transform: scale(1.2);
+}
+
+.tasks-header {
+  display: flex;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+  font-weight: 600;
+  color: #555;
+  font-size: 14px;
+}
+
+.col {
+  padding: 0 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.col-name { flex: 2; }
+.col-desc { flex: 3; }
+.col-time { flex: 1.3; }
+.col-del { flex: 0.5; }
+
+ul#task-list {
+  list-style: none;
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+ul#task-list li {
+  display: flex;
+  padding: 12px 20px;
+  border-bottom: 1px solid #eee;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none;
+}
+ul#task-list li.checked {
+  color: #999;
+  text-decoration: line-through;
+  background-color: #f9f9f9;
+}
+
+ul#task-list li div {
+  padding: 0 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+ul#task-list li .col-name { flex: 2; }
+ul#task-list li .col-desc { flex: 3; }
+ul#task-list li .col-time { flex: 1.3; color: #777; font-size: 13px; }
+ul#task-list li .col-del {
+  flex: 0.5;
+  color: #c00;
+  font-weight: 900;
+  font-size: 22px;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  padding-left: 10px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 18px 20px;
+  font-weight: 700;
+  color: orangered;
+  font-size: 18px;
+  border-top: 2px solid #eee;
+  background-color: #fff5f2;
+}
+
+#add-task {
+  padding: 20px;
+}
+.input-group {
+  margin-bottom: 20px;
+}
+input[type=text] {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+input[type=text]:focus {
+  border-color: orangered;
+}
+button#add-btn {
+  width: 100%;
+  background-color: orangered;
   border: none;
-  border-radius: 5px;
-  border-bottom: 1px solid grey;
-  justify-items: center;
+  color: white;
+  padding: 14px 0;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-@media screen and(max-width: 500px){
-  body{
-    max-width: 500px;
-  }
+button#add-btn:hover {
+  background-color: #d0421b;
 }
+
+/* Scrollbar for task list */
+/* ul#task-list::-webkit-scrollbar {
+  width: 6px;
+}
+ul#task-list::-webkit-scrollbar-thumb {
+  background-color: orangered;
+  border-radius: 3px;
+} */

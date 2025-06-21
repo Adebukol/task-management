@@ -1,66 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" media="screen and (max-width: 500px)" href="style.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/settings.png">
-    <title>Task-Management-app</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Task Manager</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-<div class="container">
-    <div id="task-display" class="task-page">
-        <div class="box"></div>   
-        <div id="head">
-            <h1>Tasks</h1>
-        <div>
-            <img class="app-ctr" src="images/settings.png" alt="task">
-            <img class="app-ctr" id="showEl" onclick="show()" src="images/plus.png" alt="plus-sign">
-        </div>
+<body class="flex items-center justify-center min-h-screen p-0">
+    <div id="app" class="w-full">
+        <!-- Content will be rendered here by JavaScript -->
     </div>
-    <div class="heading">
-        <p>Task Name</p>
-        <p>Description</p>
-        <p>Time</p>
-    </div>
-    <ul id="task-page">
-        </ul>
-        <div class="timestamp">
-        </div>
-    <div class="stats">
-        <h2>Stats</h2>
-        <div class="numbers">
-            <div class="number1">
-            <span id="countEl">0</span><p class="num-text">Total Tasks Open</p>
-        </div>
-        <div class="number2">
-            <span id="totalTask">0</span><p class="num-text">Total Tasks Closed</p>
-        </div>
-            <div class="number3">
-            <span id="completionPercent">0%</span><p class="num-text">Completion Rate</p>
-        </div>
-        </div>
-    </div>
-    </div>
-      
-<div id="add-task" class="task-input">
-      <div class="box"></div>
-      <!-- <div class="container-2"> -->
-          <h1>Add Task</h1>
-          <div class="row">
-            <input type="text" name="task1" id="task-name" placeholder="TaskName" required>
-            <br>    
-            <input type="text" name="task2" id="task-description" placeholder="TaskDescription" required>
-            <br>
-            <button type="submit" onclick="save()" id="add-btn">ADD</button>
-        </div>
-        
-          
-      </div>
-</div>
+<!-- <body>
 
-<script src="main.js"></script>
+<div class="container"> -->
+
+  <!-- TASK PAGE -->
+  <!-- <div id="task-display">
+    <div class="top-bar"></div>
+    <header class="header-row">
+      <h2>Tasks</h2>
+      <div class="icons">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828817.png" id="showAddTask" alt="Add Task" title="Add Task" />
+        <img src="https://cdn-icons-png.flaticon.com/512/3524/3524639.png" id="settingsIcon" alt="Settings" title="Settings (Coming Soon)" />
+      </div>
+    </header>
+
+    <div class="tasks-header">
+      <div class="col col-name">Task Name</div>
+      <div class="col col-desc">Description</div>
+      <div class="col col-time">Time</div>
+      <div class="col col-del"></div>
+    </div>
+
+    <ul id="task-list"></ul>
+
+    <div class="stats">
+      <div><strong>Total Open:</strong> <span id="openCount">0</span></div>
+      <div><strong>Total Closed:</strong> <span id="closedCount">0</span></div>
+      <div><strong>Completion %:</strong> <span id="completionRate">0%</span></div>
+    </div>
+  </div> -->
+
+  <!-- ADD TASK PAGE -->
+  <!-- <div id="add-task" style="display:none;">
+    <div class="top-bar"></div>
+    <header class="header-row">
+      <h2>Add Task</h2>
+      <div class="icons">
+        <img src="/images/icon-close.svg" id="backBtn" alt="Back" title="Back to Tasks" />
+      </div>
+    </header>
+
+    <div class="input-group">
+      <input type="text" id="task-name" placeholder="Task Name" />
+    </div>
+    <div class="input-group">
+      <input type="text" id="task-desc" placeholder="Task Description" />
+    </div>
+    <button id="add-btn">Add Task</button>
+  </div>
+
+</div> -->
+
+<script src="script.js" type="module"></script>
 </body>
 </html>
